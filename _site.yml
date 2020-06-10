@@ -13,7 +13,7 @@ navbar:
       href: teaching.html
   right:
     - icon: fa-envelope fa-lg
-      href: <christopher.claassen@glasgow.ac.uk>
+      href: <mailto:christopher.claassen@glasgow.ac.uk>
     - icon: fa-twitter fa-lg
       href: https://twitter.com/chris__claassen
     - icon: fa-google scholar fa-lg
