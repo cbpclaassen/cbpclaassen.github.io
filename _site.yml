@@ -1,0 +1,26 @@
+name: "Christopher Claassen"
+output_dir: "."
+navbar:
+  title: "Christopher Claassen"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Research"
+      href: research.html
+    - text: "Data"
+      href: data.html
+    - text: "Teaching"
+      href: teaching.html
+  right:
+    - icon: fa-envelope fa-lg
+      href: contact.html
+    - icon: fa-twitter fa-lg
+      href: https://twitter.com/chris__claassen
+    - icon: fa-google scholar fa-lg
+      href: https://scholar.google.co.uk/citations?user=8o-A490AAAAJ&hl=en
+    - icon: fa-orcid fa-lg
+      href: https://orcid.org/0000-0001-5149-0001
+output:
+  html_document:
+    theme: paper
+    css: 'styles.css'
