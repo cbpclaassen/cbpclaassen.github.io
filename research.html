@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>research.utf8</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/paper.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 64px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h2 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h3 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h4 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h5 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.section h6 {
+  padding-top: 69px;
+  margin-top: -69px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Christopher Claassen</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="data.html">Data</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="&lt;mailto:christopher.claassen@glasgow.ac.uk&gt;">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://twitter.com/chris__claassen">
+    <span class="fa fa-twitter fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<p><br></p>
+<div id="current-research" class="section level3">
+<h3>Current Research</h3>
+<p>My CV is available <a href="docs/Claassen_CV_full.pdf">here</a></p>
+<ul>
+<li><p><a href="docs/Moral%20economy%20democratic%20support.pdf">The Political and Moral Economies of Democratic Support</a>. [<a href="docs/Moral%20economy%20appendix.pdf">Supplementary materials</a>]<br />
+Popular support for democracy is the lifeblood of stable democratic systems. Yet existing research is poorly suited for explaining why democratic support falls and how it might rise again, because it uses static research designs, and identifies the sources of support as being fairly static factors such as institutions and political cultures. In contrast, this paper proposes and tests two explanations for changes in democratic support: a political-economic theory focusing on fluctuations in the effectiveness of governance, and a moral-economic theory focusing on variations in the impartiality of governance and political equality. Using dynamic, time-series, cross-sectional tests, we find that the most important drivers of changes in support are moral rather than political-economic. Preserving the legitimacy of democracy, and therefore its survival, rests on the extent to which democratic governments can curb corruption, treat citizens impartially, and provide more equitable access to power across class, ethnic, and gender divides.</p></li>
+<li><p><a href="docs/Authoritarian_dynamic.pdf">Do Threats Galvanize Authoritarians or Mobilize Non-Authoritarians? Experimental Tests from 19 European Societies</a>. [<a href="docs/Authoritarian_dynamic_appendix.pdf">Supplementary materials</a>]<br />
+Authoritarian predispositions and contextual threats are both thought to produce intolerance and prejudice towards immigrants and other minorities. Yet there is considerable dispute as to how authoritarianism and threats interact to produce an “authoritarian dynamic.” Some scholars argue that threats increase intolerance by “galvanizing” authoritarians. Others claim that authoritarians are always intolerant toward outgroups, with threat instead “mobilizing” non-authoritarians. Using experimental manipulations of immigrant cultural threat embedded in nationally-representative samples from 19 European societies, this study offers a dispositive test of these competing hypotheses. While we find some evidence for the “galvanizing” hypothesis, we find no evidence for the “mobilizing” hypothesis. The effects vary considerably across national samples however, with immigrants from Muslim societies being particularly likely to activate authoritarian predispositions. These findings show how the migration of culturally distinctive groups has the potential to activate authoritarian dispositions, thereby pushing the issue of immigration to the center of political debates.</p></li>
+</ul>
+<p><br></p>
+</div>
+<div id="published-research" class="section level3">
+<h3>Published Research</h3>
+<ul>
+<li><p><a href="docs/Groups_tolerance.pdf">Putting Groups Back Into the Study of Political Intolerance</a>, in <em>At the Forefront of Political Psychology: Essays in Honor of John L. Sullivan. Routledge</em> (2020).<br />
+We argue that there may be some utility to bringing groups back into the study of intolerance. Even with controls for group threat, groups may differ in ways that are highly significant for tolerance. In particular, people may react differently to groups perceived to be anti-democratic, and other group attributes may be influential as well. Consequently, we analyze political intolerance using a multilevel model that takes into account both micro-level determinants and group-level determinants of intolerance. We conclude that the “least-liked” approach can be usefully supplemented by including perceived group attributes. When it comes to tolerance, not all groups can be treated equally.</p></li>
+<li><p><a href="https://doi.org/10.1017/S0003055419000558">In the Mood for Democracy? Democratic Support as Thermostatic Opinion</a> <em>American Political Science Review</em> (2020). [<a href="docs/Claassen_democratic_mood.pdf">Ungated version</a> | <a href="docs/Democratic_mood_supp_materials.pdf">Supplementary materials</a> | <a href="https://www.economist.com/graphic-detail/2019/11/06/why-do-countries-with-more-democracy-want-less-of-it">Coverage in <em>The Economist</em></a>]<br />
+Public support has long been thought crucial for the vitality and survival of democracy. Existing research has argued that democracy also creates its own demand: through early-years socialization and later-life learning, the presence of a democratic system coupled with the passage of time produces widespread public support for democracy. Using new panel measures of democratic mood varying over 135 countries and up to 30 years, this paper finds little evidence for such a positive feedback effect of democracy on support. Instead, it demonstrates a negative, thermostatic effect: increases in democracy depress democratic mood, while decreases cheer it. Moreover, it is increases in the liberal, counter-majoritarian aspects of democracy, not the majoritarian, electoral aspects that provoke this backlash from citizens. These novel results challenge existing research on support for democracy, but also reconcile this research with the literature on macro-opinion.</p></li>
+<li><p><a href="https://doi.org/10.1111/ajps.12452">Does Public Support Help Democracy Survive?</a> <em>American Journal of Political Science</em> (2020). [<a href="docs/Claassen_democracy_public_support.pdf">Ungated version</a> | <a href="docs/Claassen_democracy_public_support_SI.pdf">Supplementary materials</a> | <a href="https://www.washingtonpost.com/politics/2019/07/17/does-it-matter-what-public-thinks-about-democracy/"><em>Washington Post</em> Monkey Cage blog post</a>]<br />
+It is widely believed that democracy requires public support to survive. The empirical evidence for this hypothesis is weak, however, with existing tests resting on small cross-sectional samples and producing contradictory results. The underlying problem is that survey measures of support for democracy are fragmented across time, space, and different survey questions. In response, this article uses a Bayesian latent variable model to estimate a smooth country-year panel of democratic support for 135 countries and up to 29 years. The article then demonstrates a positive effect of support on subsequent democratic change, while adjusting for the possible confounding effects of prior levels of democracy and unobservable time-invariant factors. Support is, moreover, more robustly linked with the endurance of democracy than its emergence in the first place. As Lipset and Easton hypothesized over 50 years ago, public support does indeed help democracy survive.</p></li>
+<li><p><a href="https://doi.org/10.1177/1532673X18820864">Deplorables: Emotions, Political Sophistication, and Political Intolerance</a> <em>American Politics Research</em> (2020). [<a href="docs/emotion_intolerance.pdf">Ungated version</a> | <a href="docs/emotion_intolerance_appendices.pdf">Supplementary materials</a>]<br />
+While scholars have shown strong and enduring interest in the role of emotions in politics, questions remain about the connections between emotions and political intolerance. First, it is not clear which emotion (if any) is likely to produce intolerance toward one’s disliked groups, with different studies favoring hatred, anger, or fear. Second, it is unclear whether these effects of emotion are moderated by sophistication, as some conventional political thought argues. Do the less-sophisticated, in other words, rely on emotions when making judgments, therefore being less tolerant than sophisticates, who rely on reason? Here, we test both hypotheses using a large representative sample of the American population. We find that hatred, anger, and fear are significantly but only modestly related to political intolerance. Moreover, the effects of emotions on intolerance are not consistently stronger among the unsophisticated. These findings provide little support for the conventional assumption that the less sophisticated rely on their emotions in making political judgments.</p></li>
+<li><p><a href="http://doi.org/10.1017/pan.2018.32">Estimating Smooth Country-Year Panels of Public Opinion</a> <em>Political Analysis</em> (2019). [<a href="docs/Claassen_estimating_opinion_panels.pdf">Ungated version</a> | <a href="http://dx.doi.org/10.7910/DVN/A47LUM">Replication materials</a> | <a href="https://www.washingtonpost.com/news/monkey-cage/wp/2018/07/05/yes-support-for-democracy-is-declining-worldwide-but-not-in-the-u-s-or-other-western-democracies/"><em>Washington Post</em> Monkey Cage blog post</a>]<br />
+At the microlevel, comparative public opinion data are abundant. But at the macrolevel – the level where many prominent hypotheses in political behavior are believed to operate – data are scarce. In response, this paper develops a Bayesian dynamic latent trait modeling framework for measuring smooth country-year panels of public opinion even when data are fragmented across time, space, and survey item. Six models are derived from this framework, applied to opinion data on support for democracy, and validated using tests of internal, external, construct, and convergent validity. The best model is reasonably accurate, with predicted responses that deviate from the true response proportions in a held-out test dataset by six percentage points. In addition, the smoothed country-year estimates of support for democracy have both construct and convergent validity, with spatiotemporal patterns and associations with other covariates that are consistent with previous research.</p></li>
+<li><p><a href="http://link.springer.com/article/10.1007/s11109-018-9444-x">Does Intolerance Dampen Dissent? Macro-Tolerance and Protest in American Metropolitan Areas</a> <em>Political Behavior</em> (2019). [<a href="docs/Tolerance%20and%20protest.pdf">Ungated version</a> | <a href="docs/Tolerance%20and%20protest%20online%20appendix.pdf">Supplementary materials</a> | <a href="docs/tolerance_protest_replication_files.zip">Replication materials</a> | <a href="https://www.washingtonpost.com/news/monkey-cage/wp/2018/02/13/does-free-speech-help-democracy-we-did-the-research"><em>Washington Post</em> Monkey Cage blog post</a>]<br />
+Political tolerance has long been regarded as one of the most important democratic values because intolerant political cultures are believed to foster conformity and inhibit dissent. Although widely endorsed, this theory has rarely been investigated. Using multilevel regression with poststratification to measure levels of macro-tolerance in U.S. metropolitan areas, and event data to measure rates of protest, we test whether cultures of intolerance do indeed inhibit public expressions of dissent. We find that they do: levels of macro-tolerance are positively and strongly associated with higher rates of protest in American metropolitan areas. Our findings have implications for the study of political tolerance, for normative theories of free speech and other civil liberties, and for scholarship on protest and collective action.</p></li>
+<li><p><a href="http://journals.sagepub.com/doi/full/10.1177/0049124118769086">Improving and Validating Survey Estimates of Religious Demography Using Bayesian Multilevel Models and Poststratification</a> <em>Sociological Methods &amp; Research</em> (2018). [<a href="docs/estimating_religious_demography.pdf">Ungated version</a> | <a href="docs/estimating_religious_demography_supp_materials.pdf">Supplementary materials</a>]   Religious group size, demographic composition, and the dynamics thereof are of interest in many areas of social science, including migration, social cohesion, parties and voting, and violent conflict. Existing estimates however are of varying and perhaps poor quality because many countries do not collect official data on religious identity. We propose a method for accurately measuring religious group demographics using existing survey data: Bayesian multilevel regression models with post-stratification, or MRP. We illustrate this method by estimating the demography of Muslims, Hindus, and Jews in Great Britain over a 20-year period, and validate it by comparing our estimates to UK census data on religious demography. Our estimates are very accurate, differing from true population proportions by as little as 0.29 (Muslim) to 0.04 (Jewish) percentage points. These findings have implications for the measurement of religious demography as well as small group attributes more generally.</p></li>
+<li><p><a href="http://afrobarometer.org/publications/wp173-explaining-south-african-xenophobia">Explaining South African Xenophobia</a> <em>Afrobarometer Working Papers</em> (2017).<br />
+After widespread violence in 2008 and 2015, South Africa is now clearly one of most hostile destinations in the world for African migrants. Existing research on the determinants of South African xenophobia has focused on developing and advancing theories, with little attention paid to testing which theories, if any, actually account for mass xenophobia. This is the goal of this paper. By combining individual-level Afrobarometer survey items with municipal-level census indicators, we produce a rich, quantitative data set of numerous factors that have been proposed as determinants of South African xenophobia. The results of multilevel regression analyses show support for the explanations of poverty, relative deprivation, frustration with government, and social mobilization, with mixed evidence for resource competition. Taken together, the results point toward a mechanism of scapegoating, where frustrations and hopelessness produce aggression that is targeted at African immigrants.</p></li>
+<li><p><a href="http://dx.doi.org/10.1017/S000712341400012X">Group Entitlement, Anger and Participation in Intergroup Violence</a> <em>British Journal of Political Science</em> (2016). [<a href="docs/Claassen_participation_intergroup_violence.pdf">Ungated version</a> | <a href="docs/Participation_intergroup_violence_supp._materials_BJPS.pdf">Supplementary materials</a> | <a href="data.html">Replication materials</a>]<br />
+There is little research on the thousands of individuals who take part in intergroup violence. This article proposes that their participation is motivated by the emotion of intergroup anger, which, in turn, is triggered by a comparison between the intergroup distribution of resources and the distribution that is believed to be desirable. Thus, when another group is perceived to violate group entitlements – by taking jobs thought to belong to the ingroup, for example – anger is experienced and individuals become more willing to take part in violence against the outgroup. Support for this theory is found in a new survey dataset, collected in a slum in South Africa where anti-immigrant violence occurred in 2008.<br />
+<em>An earlier version of this paper received an honourable mention in the 2012 Otto Klineberg Intercultural and International Relations Award from the Society for the Psychological Study of Social Issues.</em></p></li>
+<li><a href="http://dx.doi.org/10.1007/s11192-015-1584-8">Measuring University Quality</a> <em>Scientometrics</em> (2015). [<a href="docs/University_rankings.pdf">Ungated version</a> | <a href="docs/measuring_university_quality_code.zip">Replication code</a>]<br />
+I use a Bayesian hierarchical latent trait model, and data from eight different university ranking systems, to estimate university quality. By combining information from different systems, I obtain more accurate ratings than are currently available from any single source. And rather than dropping institutions that receive only a few ratings, the model simply uses whatever information is available. In addition, while most ratings focus on point estimates and their attendant ranks, I focus on the uncertainty in quality estimates, showing that the difference between universities ranked 50th and 100th, and 100th and 250th, is insignificant. Finally, I also estimate the error implicit in each rating, allowing me to measure the accuracy of the various ranking systems.
+</p></li>
+<li><p><a href="http://dx.doi.org/10.1007/s11109-014-9272-6">Ideological Labels in America</a> <em>Political Behavior</em> (2015). [<a href="docs/ClaassenTuckerSmith.pdf">Ungated version</a> | <a href="docs/ideological_labels_tables_figures_appendix">Supplementary materials</a>]   This paper extends recent research on the operational-symbolic paradox in American politics: the presence of “conflicted conservatives” who hold conservative symbolic identities but are liberal on the issues. Using issue-level measures of ideological incongruence, we find that substantial numbers—over 30 percent—of Americans experience conflicted conservatism, particularly on the issues of education and welfare spending. We also, however, find that 20 percent of Americans exhibit conflicted liberalism. Our analysis of the determinants of ideological conflict confirms existing findings that conflicted conservativism is a function of low sophistication and religiosity. We also find, however, that partisan, ideological and ethnic identities influence the extent of conflicted conservatism and conflicted liberalism.</p></li>
+<li><p><a href="http://dx.doi.org/10.1177/2053168014534649">Who Participates in Communal Violence? Evidence from South Africa</a> <em>Research &amp; Politics</em> (2014). [<a href="docs/Claassen_communal_violence.pdf">Ungated version</a> | <a href="docs/Participation_communal_riots_appendix_ResPol.pdf">Supplementary materials</a> | <a href="data.html">Replication materials</a>]<br />
+Little is known about the thousands of people who take part in communal violence. Existing research is largely based on interviews, impressionistic accounts and government records of arrestees. In contrast, this paper examines data from a novel survey of a representative sample of residents of Alexandra, a township in South Africa where a 2008 nation-wide wave of anti-immigrant riots began. Data on participation in the attacks were collected using a method ensuring the privacy of responses, thus potentially reducing response bias. In contrast to the conclusions of existing research, which emphasize the participation of young males, the survey data reveal that a significant number of participants were female and participants were not particularly young, being 34 years old on average. Participants are more likely to support an opposition party, attend community policing meetings and have a high school education.</p></li>
+<li><p><a href="http://dx.doi.org/10.1007/s00355-010-0507-0">Estimating the Effects of Activists in Two-Party and Multi-Party Systems: A Comparison of the United States and Israel</a> <em>Social Choice and Welfare</em> (2011). [<a href="docs/SCW2010.pdf">Ungated version</a> | <a href="docs/Participation_communal_riots_appendix_ResPol.pdf">Supplementary materials</a> | <a href="data.html">Replication materials</a>]<br />
+</p></li>
+<li><p>Empirical and Formal Models of the United States Presidential Elections in 2000 and 2004, in <em>The Political Economy of Institutions, Democracy and Voting</em>, Springer (2011).<br />
+We test a model of US electoral politics where activist groups contribute resources to their favoured parties. We find that presidential candidates in the United States are pulled from their convergent equilibrium position by the influence of activists. In particular, using American National Election Study survey data, we find that in the 2008 presidential election social activists were influential in the Democrat party and economic activists in the Republican party.</p></li>
+<li><p><a href="http://dx.doi.org/10.1111/j.1540-4560.2010.01644.x">Racial Reconciliation in South Africa: Interracial Contact and Changes over Time</a> <em>Journal of Social Issues</em> (2010). [<a href="docs/JSI2010.pdf">Ungated version</a>]<br />
+We investigate interracial “reconciliation” in South Africa, comparing how group levels of reconciliation have shifted from 2001 to 2004. Noting that contact is one of the most important drivers of reconciliation, we then examine the changing levels of intergroup contact over this time period.</p></li>
+</ul>
+<script type="text/javascript">
+var sc_project=5114407; 
+var sc_invisible=1; 
+var sc_security="2bdee8ab"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript>
+<div class="statcounter">
+<a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/5114407/0/2bdee8ab/1/"
+alt="Web Analytics"></a>
+</div>
+</noscript>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

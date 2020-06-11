@@ -1,12 +1,30 @@
----
----
+<br>
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<img src="images/me_20_1.jpg" style="width:25%; border:10px solid; margin-right: 20px" align="left">
+<img src="images/me_20_1.jpg" style="width:33%; border:8px solid; margin-right: 25px" align="left">
 
 I am a political scientist who researches public attitudes to democracy and majority group attitudes to immigrant and ethnic out-groups. I have a particular interest in how these opinions shape political institutions and political behaviour. I also conduct research in quantitative methodology, with a focus on extracting aggregate quantities of interest from secondary survey data. 
 
 I am currently a senior lecturer in politics in the [School of Social and Political Sciences](http://www.gla.ac.uk/schools/socialpolitical/), University of Glasgow, where I teach courses in intergroup conflict and reconciliation, democratisation, and comparative politics. Originally from Durban, South Africa, I completed my PhD in the [Department of  Political Science](https://polisci.wustl.edu/) at Washington University in St. Louis, Missouri.
 
-My CV is available [here](docs/Claassen_CV_full.pdf).
+My CV is available [here](docs/Claassen_CV_full.pdf)\
+[Twitter](https://twitter.com/chris__claassen)\
+[Google scholar](https://scholar.google.co.uk/citations?user=8o-A490AAAAJ)\
+[ORCID](https://orcid.org/0000-0001-5149-0001)
+
+
+<script type="text/javascript">
+var sc_project=5114407; 
+var sc_invisible=1; 
+var sc_security="2bdee8ab"; 
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/5114407/0/2bdee8ab/1/"
+alt="Web Analytics"></a></div></noscript>
+
